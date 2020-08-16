@@ -44,7 +44,7 @@
       
     <center>
               <div class="form-group">
-            <h3> Lista de plantilla </h3>
+            <h3> Visualizar los curso a los que el estudiante este asignado </h3>
              <form action="ControladorPlantilla" method="POST">
                 <input  class="btn btn-success" type="submit" name="accion" value="Listar" >
                    <input  class="btn btn-primary" type="submit" name="accion"  value="Nuevo">

@@ -134,12 +134,24 @@ public class ControladorLogin extends HttpServlet {
                        response.sendRedirect("MenuAdmin.jsp");
                    }
                    else
-                        if(ab.getCargo().equals("user")){
+                        if(ab.getCargo().equals("Estudiante")){
                 
                             
                             
                             
-                            response.sendRedirect("MenuUser.jsp");
+                            response.sendRedirect("FiltroEstudiante.jsp");
+        
+                   }
+                        
+                            else
+                        if(ab.getCargo().equals("Catedratico")){
+                
+                            
+                            
+                            
+                            response.sendRedirect("FiltroCatedratico.jsp");
+                            
+                            
         
                    }
 

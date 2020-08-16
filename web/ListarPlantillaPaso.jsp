@@ -37,11 +37,11 @@
       
     <center>
               <div class="form-group">
-            <h3> Lista de plantilla pasos </h3>
+            <h3> LISTADO DE NOTAS </h3>
              <form action="ControladorPlantillaPaso" method="POST">
-                       <a class="btn btn-primary"  href="MenuAdmin.jsp"> Menu principal </a> <td>
+                   
        
-       <a class="btn btn-primary"  href="ListarPlantilla2.jsp"> listar plantilla </a> <td>
+       <a class="btn btn-primary"  href="ListarPlantilla2.jsp"> VISUALIZAR NOTAS  </a> <td>
                 <input  class="btn btn-success" type="submit" name="accion" value="Listar" >
                    <input  class="btn btn-primary" type="submit" name="accion"  value="Nuevo">
                 </form>
@@ -56,12 +56,12 @@
                     
                     <tr>
                   
-                        <th>ID</th>
+                
                    
-                         <th >ID PLANTILLA</th>
-                          <th>NUMERO DE  PASO</th>
-                           <th>NOMBRE</th>
-                            <th>APROBADORES</th>
+                        <th>NOMBRE CURSO</th>
+                          <th>NOTA</th>
+                   
+                    
 
                             
                              
@@ -83,11 +83,11 @@ for (int i = 0; i < datos.size(); i++) {
                 
         <tr>
             
-                <td><%=datos.get(i).getId() %></td>
-                <td><%=datos.get(i).getId_plantilla() %></td> 
+           <td><%=datos.get(i).getNombre() %></td>
+           
                 <td><%=datos.get(i).getNumero_pasos() %></td>
-                <td><%=datos.get(i).getNombre() %></td>
-                <td><%=datos.get(i).getAprobadores() %></td>
+            
+       
                 
                 
                 <td>

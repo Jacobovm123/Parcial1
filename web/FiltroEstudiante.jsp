@@ -1,19 +1,16 @@
-
-<%@page import="modelo.PlantillaRol"%>
-<%@page import="modelo.PlantillaRolDAO"%>
-<%@page import="java.util.List"%>
-
-
 <%-- 
-    Document   : newjs
-    Created on : 19/08/2019, 12:49:07 AM
+    Document   : FiltroEstudiante
+    Created on : 16/08/2020, 03:40:39 AM
     Author     : jacob
 --%>
 
+<%@page import="modelo.Usuario"%>
+<%@page import="java.util.List"%>
+<%@page import="modelo.PersonaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html>
+ <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,27 +27,53 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-    <body>
+  <body  >
         
-        
-        <a class="btn btn-primary"  href="ListarPlantillaCampo.jsp">ingreso plantilla campo </a> <td>
-         <a class="btn btn-primary"  href="IngresoRol.jsp">ingreso rol </a> <tr>
-          <a class="btn btn-primary"  href="ListarUsRol.jsp">Listar usuario rol </a> <tr>
-         <a class="btn btn-primary"   href="IngresoUsRol.jsp">ingreso usuario rol </a> 
-        
+           
+
 
       
     <center>
+        
+        
+        
               <div class="form-group">
-            <h3> Lista de plantilla rol </h3>
-             <form action="ControladorPlantillaRol" method="POST">
-                <input  class="btn btn-success" type="submit" name="accion" value="Listar" >
-                   <input  class="btn btn-primary" type="submit" name="accion"  value="Nuevo">
+            <h3> Menu estudiante  </h3>
+             <form action="Controlador" method="POST">
+               
+      
+                
+                 
                 </form>
             
             </div>
         
           
+                <div class="btn-group">
+                    <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">ver notas y cursos <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="VistaNotaEstudiante.jsp">Ver notas y crsos</a></li>
+                  
+                        <li class="divider"></li>
+                     
+                    </ul>
+                    
+                    
+               
+                    
+               
+                </div>
+        
+            <div class="btn-group">
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Creacion y asignacion de cursos <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="ListarPlantillaCampo.jsp">Creacion y asignacion de cursos </a></li>
+                   
+                   
+                        <li class="divider"></li>
+                  
+                    </ul>
+                </div>
                 
             <div>
             <table  class="table table-striped" >
@@ -60,9 +83,12 @@
                   
                         <th>ID</th>
                    
-                         <th >ID PLANTILLA</th>
-                          <th>ID PLANTILLA ROL</th>
-           
+                         <th >NOMBRE</th>
+                          <th>APELLIDO</th>
+                           <th>PASS</th>
+                            <th>CORREO</th>
+                             <th>USUARIO</th>
+                              <th>CARGO</th>
                         
                         
                     </tr>
@@ -71,9 +97,9 @@
                        
                     
                     <%
-                    PlantillaRolDAO dao = new PlantillaRolDAO();
+                    PersonaDAO dao = new PersonaDAO();
                     
-                    List<PlantillaRol>datos=dao.listar();
+                    List<Usuario>datos=dao.listarfiltro();
                     
 for (int i = 0; i < datos.size(); i++) {
        
@@ -82,16 +108,18 @@ for (int i = 0; i < datos.size(); i++) {
         <tr>
             
                 <td><%=datos.get(i).getId() %></td>
-                <td><%=datos.get(i).getId_plantilla() %></td> 
-                <td><%=datos.get(i).getId_rol() %></td>
-                           
-                
+                <td><%=datos.get(i).getNombre() %></td> 
+                <td><%=datos.get(i).getApellido() %></td>
+                <td><%=datos.get(i).getPass() %></td>
+                <td><%=datos.get(i).getCorreo() %></td>
+                <td><%=datos.get(i).getUsuario() %></td>
+                <td><%=datos.get(i).getCargo() %></td> 
                 <td>
                 
-                    <form  action="ControladorPlantillaRol" method="POST"  >
+                    <form  action="Controlador" method="POST"  >
                               <input type="hidden"  name="id" id="id"  value="<%=datos.get(i).getId() %>" >
-                              <input  class="btn btn-success" type="submit"  name="accion" value="Editar" >
-                                <input  class="btn btn-danger" type="submit" name="accion"  value="Delete">
+                             
+                             
                     
                     
                     

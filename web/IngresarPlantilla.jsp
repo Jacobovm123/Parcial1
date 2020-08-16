@@ -48,6 +48,8 @@
             
                <br>
                NOMBRE:
+               
+               
                <input  class="form-control"   placeholder="nombre" type="text" name="txtnombre">
                <br>
             

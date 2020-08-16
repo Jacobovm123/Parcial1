@@ -1,5 +1,7 @@
 
 
+<%@page import="modelo.Usuario"%>
+<%@page import="modelo.PersonaDAO"%>
 <%@page import="modelo.Plantilla"%>
 <%@page import="java.util.List"%>
 <%@page import="modelo.PlantillaDAO"%>
@@ -43,12 +45,12 @@
                     
    
                <br>
-                NOMBRE PLANTILLA:
+                NOMBRE ESTUDIANTE O CATEDRATICO:
                <select id="dropPlantilla" name="dropPlantilla">
                     
                         <%
-                            PlantillaDAO dao = new PlantillaDAO();
-                            List<Plantilla>datos=dao.listar();
+                            PersonaDAO dao = new PersonaDAO();
+                            List<Usuario>datos=dao.listarfiltro();
                             for(int i=0; i<datos.size(); i++){
                             out.print("<option value="+datos.get(i).getId()+">"+
                             datos.get(i).getNombre()
@@ -59,16 +61,16 @@
                     
                 </select>
                <br>
-               NOMBRE CAMPO:
+               NOMBRE CURSO:
                <input   class="form-control" placeholder="nombre campo" type="text" name="txtnombrecampo">
                <br>
-               NUMERO CAMPO:
+               CODIGO DE CURSO:
                <input  class="form-control"   placeholder="numero campo" type="text" name="txtnumerocampo">
                <br>
-               DATO:
+               SEMESTRE:
                <input  class="form-control"  placeholder="dato" type="text" name="txtdato">
                <br>
-               DESCRIPCION:
+               CICLO:
                <input class="form-control"  placeholder="descripcion" type="text" name="txtdescripcion">
       
                

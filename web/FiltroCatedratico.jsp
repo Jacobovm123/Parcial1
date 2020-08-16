@@ -1,23 +1,19 @@
 <%-- 
-    Document   : ListarProcesoCampo
-    Created on : 16/10/2019, 05:06:31 PM
+    Document   : FiltroCatedratico
+    Created on : 16/08/2020, 04:05:42 AM
     Author     : jacob
 --%>
 
-
-<%@page import="modelo.ProcesoCampo"%>
-<%@page import="modelo.ProcesoCampDAO"%>
-<%@page import="modelo.Plantilla"%>
-<%@page import="modelo.PlantillaDAO"%>
-
-
+<%@page import="modelo.Usuario"%>
 <%@page import="java.util.List"%>
-
-
+<%@page import="modelo.PersonaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html>
+    
+    
+    
+ <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,21 +32,49 @@
   </head>
   <body  >
         
-   
+        
+
+
       
     <center>
               <div class="form-group">
-            <h3> Lista de proceso campo </h3>
-             <form action="ControladorProcesoCampo" method="POST">
-                   <a class="btn btn-primary"  href="MenuAdmin.jsp"> Menu principal </a> <td>
-       
-                <input  class="btn btn-success" type="submit" name="accion" value="Listar" >
-                   <input  class="btn btn-primary" type="submit" name="accion"  value="Nuevo">
+            <h3> MENU CATEDRATICO </h3>
+             <form action="Controlador" method="POST">
+             
+      
+          
+                   
                 </form>
             
             </div>
-        
+           <div class="btn-group">
+                    <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">INGRESO DE NOTAS  <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="ListarPlantillaPaso.jsp"> INGRESO DE NOTAS </a></li>
+             
+                        <li class="divider"></li>
+              
+                    </ul>
+                </div>
+        <div class="btn-group">
+                    <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">GENERACION DE ACTAS   <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="GenerarActas.jsp"> GENERACION DE ACTAS  </a></li>
+             
+                        <li class="divider"></li>
+              
+                    </ul>
+                </div>
           
+            <div class="btn-group">
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">ADMINISTRACION DE ACTIVIDADES   <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="GenerarActas.jsp"> ADMINISTRACION DE ACTIVIDADES  </a></li>
+             
+                        <li class="divider"></li>
+              
+                    </ul>
+                </div>
                 
             <div>
             <table  class="table table-striped" >
@@ -58,14 +82,14 @@
                     
                     <tr>
                   
-                        <th>ID CAMPO PROCESO</th>
+                        <th>ID</th>
                    
-                         <th >ID PROCESO</th>
-                          <th>NOMBRE CAMPO</th>
-                           <th>NUMERO CAMPO</th>
-                            <th>DATO</th>
-                             <th>DESCRIPCION</th>
-                            
+                         <th >NOMBRE</th>
+                          <th>APELLIDO</th>
+                           <th>PASS</th>
+                            <th>CORREO</th>
+                             <th>USUARIO</th>
+                              <th>CARGO</th>
                         
                         
                     </tr>
@@ -74,9 +98,9 @@
                        
                     
                     <%
-                    ProcesoCampDAO dao = new ProcesoCampDAO();
+                    PersonaDAO dao = new PersonaDAO();
                     
-                    List<ProcesoCampo>datos=dao.listar();
+                    List<Usuario>datos=dao.listarFiltroCatedratico();
                     
 for (int i = 0; i < datos.size(); i++) {
        
@@ -85,15 +109,15 @@ for (int i = 0; i < datos.size(); i++) {
         <tr>
             
                 <td><%=datos.get(i).getId() %></td>
-                <td><%=datos.get(i).getIdproceso()%></td> 
-                <td><%=datos.get(i).getNombrecampo()%></td>
-                <td><%=datos.get(i).getNumerocampo()%></td>
-                
-                <td><%=datos.get(i).getDato()%></td>
-                <td><%=datos.get(i).getDescripcion()%></td> 
+                <td><%=datos.get(i).getNombre() %></td> 
+                <td><%=datos.get(i).getApellido() %></td>
+                <td><%=datos.get(i).getPass() %></td>
+                <td><%=datos.get(i).getCorreo() %></td>
+                <td><%=datos.get(i).getUsuario() %></td>
+                <td><%=datos.get(i).getCargo() %></td> 
                 <td>
                 
-                    <form  action="ControladorProcesoCampo" method="POST"  >
+                    <form  action="Controlador" method="POST"  >
                               <input type="hidden"  name="id" id="id"  value="<%=datos.get(i).getId() %>" >
                               <input  class="btn btn-success" type="submit"  name="accion" value="Editar" >
                                 <input  class="btn btn-danger" type="submit" name="accion"  value="Delete">

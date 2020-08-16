@@ -71,6 +71,7 @@ Usuario u=new Usuario ();
            switch(accion){
                case "Listar":
     request.getRequestDispatcher("usuario.jsp").forward(request, response);
+    request.getRequestDispatcher("FiltroEstudiante.jsp").forward(request, response);
  
     break;
     case"Nuevo":

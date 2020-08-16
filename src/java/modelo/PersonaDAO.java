@@ -50,6 +50,65 @@ public class PersonaDAO {
     }
     return lista;
     }
+    
+    
+        public List listarfiltro (){
+    List <Usuario>lista =new ArrayList <>();
+   String sql ="SELECT * FROM usuario WHERE cargo='Estudiante'";
+    
+    try{
+    con = c.conectar(); 
+    ps=con.prepareStatement(sql);
+    rs=ps.executeQuery();
+    while (rs.next()){
+        Usuario u= new Usuario();
+        u.setId(rs.getString(1));
+          u.setNombre(rs.getString(2));
+            u.setApellido(rs.getString(3));
+              u.setPass(rs.getString(4));
+                u.setCorreo(rs.getString(5));
+                  u.setUsuario(rs.getString(6));
+                    u.setCargo(rs.getString(7));
+                    
+                    lista.add(u);
+
+    }
+    
+    }
+    catch(Exception e){
+
+    }
+    return lista;
+    }
+      public List listarFiltroCatedratico (){
+    List <Usuario>lista =new ArrayList <>();
+   String sql ="SELECT * FROM usuario WHERE cargo='Catedratico'";
+    
+    try{
+    con = c.conectar(); 
+    ps=con.prepareStatement(sql);
+    rs=ps.executeQuery();
+    while (rs.next()){
+        Usuario u= new Usuario();
+        u.setId(rs.getString(1));
+          u.setNombre(rs.getString(2));
+            u.setApellido(rs.getString(3));
+              u.setPass(rs.getString(4));
+                u.setCorreo(rs.getString(5));
+                  u.setUsuario(rs.getString(6));
+                    u.setCargo(rs.getString(7));
+                    
+                    lista.add(u);
+
+    }
+    
+    }
+    catch(Exception e){
+
+    }
+    return lista;
+    }
+    
      
     public int agregar(Usuario p){
         int r=0;

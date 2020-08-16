@@ -45,10 +45,6 @@
         <servlet-class>controlador.ControladorPasoCampoComportamiento</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ControladorCampoComportamiento</servlet-name>
-        <servlet-class>controlador.ControladorCampoComportamiento</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ControladorCampoComportamientoup</servlet-name>
         <servlet-class>controlador.ControladorCampoComportamientoup</servlet-class>
     </servlet>
@@ -111,10 +107,6 @@
     <servlet-mapping>
         <servlet-name>ControladorPasoCampoComportamiento</servlet-name>
         <url-pattern>/ControladorPasoCampoComportamiento</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ControladorCampoComportamiento</servlet-name>
-        <url-pattern>/ControladorCampoComportamiento</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ControladorCampoComportamientoup</servlet-name>

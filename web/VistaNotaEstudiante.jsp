@@ -1,25 +1,14 @@
-<%-- 
-    Document   : ListarPlantilla2
-    Created on : 25/09/2019, 05:20:57 AM
-    Author     : jacob
---%>
-
-
 <%@page import="modelo.Usuario"%>
 <%@page import="modelo.PersonaDAO"%>
 <%@page import="modelo.PlantillaPaso"%>
 <%@page import="modelo.PlantillaPasoDAO"%>
 <%@page import="modelo.PlantillaCampo"%>
-<%@page import="modelo.PlantillaCampoDAO"%>
-<%@page import="modelo.Plantilla"%>
-<%@page import="modelo.PlantillaDAO"%>
-<%@page import="modelo.Plantilla2"%>
 <%@page import="java.util.List"%>
-<%@page import="modelo.PlantillaDAO2"%>
+<%@page import="modelo.PlantillaCampoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+ <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -122,7 +111,7 @@
                         <br>
                     
                 </select>
-
+    
             </form>
                
         </div>
@@ -203,6 +192,7 @@
             
                
          
+                        
          
 
             </form>
@@ -238,7 +228,7 @@
                          <br>
                         <%
                             PersonaDAO dao222 = new PersonaDAO();
-                            List<Usuario>datos222=dao222.listar();
+                            List<Usuario>datos222=dao222.listarfiltro();
                             for(int i=0; i<datos222.size(); i++){
                             out.print("<option value="+datos222.get(i).getId()+">"+
                             datos222.get(i).getNombre()
@@ -266,8 +256,7 @@
   ver mis notas 
 </button>
                  
-                    
-   
+                      
        
                     
                 </form>

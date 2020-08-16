@@ -1,6 +1,7 @@
 
-<%@page import="modelo.Rol"%>
-<%@page import="modelo.RolDAO"%>
+<%@page import="modelo.Usuario"%>
+<%@page import="modelo.PersonaDAO"%>
+
 <%@page import="modelo.Plantilla"%>
 <%@page import="java.util.List"%>
 <%@page import="modelo.PlantillaDAO"%>
@@ -32,7 +33,7 @@
           
               <div class="page-header">
               
-                  <h1> ingresar plantilla paso</h1>              
+                  <h1> INGRESO DE NOTAS </h1>              
           </div>
               
               
@@ -42,62 +43,49 @@
                      
           <%
                 String plantilla = request.getParameter("dropPlantilla");
-                out.println(plantilla);
+                //out.println(plantilla);
                 
 
           %>
           
                     
        <br>
-          NOMBRE PLANTILLA:
-                <select id="dropPlantilla" name="dropPlantilla">
-                    
+          NOMBRE USUARIO:
+          
+              
+                  <select id="dropPlantilla" name="dropPlantilla">
+                         <br>
                         <%
-                            PlantillaDAO dao = new PlantillaDAO();
-                            List<Plantilla>datos=dao.listar();
-                            for(int i=0; i<datos.size(); i++){
-                            out.print("<option value="+datos.get(i).getId()+">"+
-                            datos.get(i).getNombre()
+                          //       PersonaDAO nue = new PersonaDAO();
+        Usuario ab = new Usuario();
+                               //if(ab.getCargo().equals("Estudiante")){
+                           // String sql ="SELECT * FROM usuario WHERE cargo='Estudiante'";   
+                            PersonaDAO dao222 = new PersonaDAO();
+                            List<Usuario>datos222=dao222.listarfiltro();
+                            for(int i=0; i<datos222.size(); i++){
+                            out.print("<option value="+datos222.get(i).getId()+">"+
+                            datos222.get(i).getNombre()
                             +"</option>");
                             }
+                            
+                            
+                             //  }
                         %>
-                    
+                        <br>
                     
                 </select>
                
                
+
                <br>
-               NUMERO DE PASO:
-               <input   class="form-control" placeholder="numeropaso" type="text" name="txtnumeropaso">
-               <br>
-               NOMBRE:
+               CURSO:
                <input  class="form-control"   placeholder="nombre" type="text" name="txtnombre">
                
-               
+                              <br>
+               PUNTEO:
+               <input   class="form-control" placeholder="numeropaso" type="text" name="txtnumeropaso">
                                 
-       <br>
-          NOMBRE ROL:
-             <select id="dropaprobadores" name="dropaprobadores">
-                    
-                        <%
-                            RolDAO dao2 = new RolDAO();
-                            List<Rol>datos2=dao2.listar();
-                            for(int i=0; i<datos2.size(); i++){
-                            out.print("<option value="+datos2.get(i).getNombre()+">"+
-                            datos2.get(i).getNombre()
-                            +"</option>");
-                            }
-                        %>
-                    
-                    
-                </select>
-                        
-                        
-                        
-                  
-                     
-               
-               <br>
+
               
                <input  class="btn btn-success"  type="submit" name="accion"  value="Guardar">
               

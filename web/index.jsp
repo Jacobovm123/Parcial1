@@ -24,7 +24,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body    background="p.jpg" class="img-responsive" >
+  <body    background="" class="img-responsive" >
          <a href="https://accounts.google.com/signup/v2/webcreateaccount?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ltmpl=default&dsh=S2064404687%3A1567759409570553&gmb=exp&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp"> si no tiene un correo aun aqui puedes crear uno para que disfrutes de nuestra aplicacion </a> 
           <form method="GET" action="ControladorGoogle">
     <center>
@@ -35,7 +35,7 @@
               
               <center>
                   
-                  <img src="u.png" alt="" class="img-circle">
+                  <img src="" alt="" class="img-circle">
               </center>
                <button class="btn btn-success" >iniciar sesion</button>
                

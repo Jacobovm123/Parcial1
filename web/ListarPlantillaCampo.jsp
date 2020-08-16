@@ -34,7 +34,7 @@
     
     <center>
               <div class="form-group">
-            <h3> Lista de plantilla campo </h3>
+            <h3> Asignacion de cursos al estudiante </h3>
              <form action="ControladorPlantillaCampo" method="POST">
                  
                  
@@ -43,9 +43,9 @@
                    
                      
               
-                   <a class="btn btn-primary"  href="ListarPlantilla2.jsp"> listar plantilla  </a> <td>
+                   <a class="btn btn-primary"  href="ListarPlantilla2.jsp"> ver mis cursos y notas  </a> <td>
        
-                       <a class="btn btn-primary"  href="MenuAdmin.jsp"> Menu principal </a> <td>
+                      
        
       
                 <input  class="btn btn-success" type="submit" name="accion" value="Listar" >
@@ -71,11 +71,11 @@
                   
                         <th>ID</th>
                    
-                         <th >ID PLANTILLA</th>
-                          <th>NOMBRE CAMPO</th>
-                           <th>NUMERO CAMPO</th>
-                            <th>DATO</th>
-                             <th>DESCRIPCION</th>
+                    
+                          <th>NOMBRE CURSO</th>
+                           <th>CODIGO CURSO</th>
+                            <th>SEMESTRE</th>
+                             <th>CICLO</th>
                              
                         
                         
@@ -100,7 +100,7 @@ for (int i = 0; i < datos1.size(); i++) {
         <tr>
             
                 <td><%=datos1.get(i).getId() %></td>
-                <td><%=datos1.get(i).getId_plantilla() %></td> 
+             
                 <td><%=datos1.get(i).getNombre_campo() %></td>
                 <td><%=datos1.get(i).getNumero_campo() %></td>
                 <td><%=datos1.get(i).getDato() %></td>

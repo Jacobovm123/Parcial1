@@ -1,6 +1,6 @@
-<%@page import="modelo.ProcesoPaso"%>
+
 <%@page import="java.util.List"%>
-<%@page import="modelo.ProcesoPasoDAO"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +30,7 @@
         <div class="col-md-12">
             <div class="text-center">
                   <div class="btn-group">
-                    <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"> Usuario <span class="caret"></span></button>
+                    <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"> Creacion de usuarios y asignacion de roles <span class="caret"></span></button>
                     <ul class="dropdown-menu">
                      
                         <li><a href="usuario.jsp">Listar Usuario</a></li>
@@ -38,198 +38,26 @@
                   
                     </ul>
                 </div>
-               
+             
                 <div class="btn-group">
-                    <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">listar plantillas <span class="caret"></span></button>
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Creacion y asignacion de cursos <span class="caret"></span></button>
                     <ul class="dropdown-menu">
-                        <li><a href="ListarPlantilla2.jsp">Listar plantillas</a></li>
-                  
-                        <li class="divider"></li>
-                     
-                    </ul>
-                    
-                    
-               
-                </div>
-                <div class="btn-group">
-                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Listar plantilla campo <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="ListarPlantillaCampo.jsp">listar plantilla campo</a></li>
+                        <li><a href="ListarPlantillaCampo.jsp">Creacion y asignacion de cursos </a></li>
                    
                    
                         <li class="divider"></li>
                   
                     </ul>
                 </div>
-                <div class="btn-group">
-                    <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Listar plantilla paso <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="ListarPlantillaPaso.jsp"> Listar plantilla paso</a></li>
              
-                        <li class="divider"></li>
               
-                    </ul>
-                </div>
        
-              
-                <div class="btn-group">
-                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"> Listar paso campo comportammiento <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="ListarPasoCampoComportamiento.jsp"> Listar Paso comportamiento </a></li>
-                       
-                        <li class="divider"></li>
-                    
-                    </ul>
-                </div>
-                
-                   <div class="btn-group">
-                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">listar proceso <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="ListarProceso.jsp">listar proceso</a></li>
-                        <li class="divider"></li>
-                    </ul>
-                </div>
-                
-                   <div class="btn-group">
-                    <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"> lista de proceso pasos<span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-           
-                          <li><a href="ListarProcesoPaso.jsp">lista de proceso paso</a></li>
-                   
-                        <li class="divider"></li>
-             
-                    </ul>
-                </div>
-       
-                  <div class="btn-group">
-                    <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"> lista de proceso campo <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                   
-                          <li><a href="ListarProcesoCampo.jsp">lista de proceso campo</a></li>
-                   
-                        <li class="divider"></li>
-             
-                    </ul>
-                </div>
-       
-                  <div class="btn-group">
-                    <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"> lista campo comportamiento procesos <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="ListarCampoComportamiento.jsp">lista campo comportamieno procesos<a></li>
-                       
-                   
-                        <li class="divider"></li>
-             
-                    </ul>
-                </div>
-                
-                
-                   
-    <center>
-      
-                
-            <div lass="form-group">
-            <table class="table table-striped"  id="display-table" >
-                <thead>
-                    
-                    <tr>
-                      <th>ID PASO</th>
-                        <th>ID PROCESO</th>
-                   
-                         <th>NOMBRE PASO PROCESO </th>
-                             <th> PASO ESTADO</th>
-                             <th> PASOS</th>
-                                     <th>FECHA </th>
-                         
-                                 <th>APROBADORES </th>
-                    
-                         
-                         
-                        
-                        
-                    </tr>
-                </thead>   
-                <tbody>
-                       
-                    
-                    <%
-                    ProcesoPasoDAO dao = new ProcesoPasoDAO();
-                    String idusuario = (String)session.getAttribute("id_usuario");
-                    List<ProcesoPaso>datos=dao.listarpasot(idusuario);
-                    
-for (int i = 0; i < datos.size(); i++) {
-       
-        %>
-                
-        <tr>
             
-                <td><%=datos.get(i).getId() %></td>
-                <td><%=datos.get(i).getId_proceso()%></td>
-                <td><%=datos.get(i).getNombre_paso_proceso()%></td> 
-                <td><%=datos.get(i).getPaso_estado()%></td>
-                <td><%=datos.get(i).getPasos()%></td>
-           
-                      <td><%=datos.get(i).getFecha()%></td>
-                            <td><%=datos.get(i).getAprobadores()%></td>
-                          
-                
-                       <td>
-                                        
                 
               
-                </tr>           
+             
                 
-        <%
-    }
-                    %>
-                    
-                    
-                    
-                </tbody>
-                
-            </table>
-            
-            
-        </div>        
-        
-        
-    </center>
-                
-                
-    <script>
-highlight_row();
-function highlight_row() {
-    var table = document.getElementById('display-table');
-    var cells = table.getElementsByTagName('td');
 
-    for (var i = 0; i < cells.length; i++) {
-        // Take each cell
-        var cell = cells[i];
-        // do something on onclick event for cell
-        cell.onclick = function () {
-            // Get the row id where the cell exists
-            var rowId = this.parentNode.rowIndex;
-
-            var rowsNotSelected = table.getElementsByTagName('tr');
-            for (var row = 0; row < rowsNotSelected.length; row++) {
-                rowsNotSelected[row].style.backgroundColor = "";
-                rowsNotSelected[row].classList.remove('selected');
-            }
-            var rowSelected = table.getElementsByTagName('tr')[rowId];
-            rowSelected.style.backgroundColor = "#00FFFF";
-            rowSelected.className += " selected";
-
-       var url ="http://localhost:8084/webDinamica/procesopaso.jsp?idpro=";
-       url += rowSelected.cells[0].innerText;
-       url +="&idpas=";
-       url +=rowSelected.cells[1].innerText;
-       window.location.replace(url);
-       
-        }
-    }
-
-}
-</script>   
                 
                 
                 
