@@ -33,113 +33,28 @@
     
     
     <center>
-              <div class="form-group">
+          
+            
+               <div class="btn-group">
+                    <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">REGRESAR A MENU ESTUDIANTE <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                     
+                        <li><a href="FiltroEstudiante.jsp">REGRESAR A MENU ESTUDIANTE </a></li>
+                    
+                  
+                    </ul>
+                </div>
+            <div class="form-group">
             <h3> Asignacion de cursos al estudiante </h3>
              <form action="ControladorPlantillaCampo" method="POST">
                  
-                 
-               
-                        
-                   
-                     
-              
-                   <a class="btn btn-primary"  href="ListarPlantilla2.jsp"> ver mis cursos y notas  </a> <td>
-       
-                      
-       
-      
-                <input  class="btn btn-success" type="submit" name="accion" value="Listar" >
+
                    <input  class="btn btn-primary" type="submit" name="accion"  value="Nuevo">
-                   
-                   
-               
-                   
-                   
-                   
+  
            
                 </form>
             
-            </div>
-        
-          
-                
-            <div>
-            <table  class="table table-striped" >
-                <thead>
-                    
-                    <tr>
-                  
-                        <th>ID</th>
-                   
-                    
-                          <th>NOMBRE CURSO</th>
-                           <th>CODIGO CURSO</th>
-                            <th>SEMESTRE</th>
-                             <th>CICLO</th>
-                             
-                        
-                        
-                    </tr>
-                </thead>   
-                <tbody>
-                    
-                    
-                       
-                    
-                    <%
-                    PlantillaCampoDAO dao1 = new PlantillaCampoDAO();
-                    
-                    List<PlantillaCampo>datos1=dao1.listar();
-                    
-                    
-                    
-for (int i = 0; i < datos1.size(); i++) {
-       
-        %>
-                
-        <tr>
-            
-                <td><%=datos1.get(i).getId() %></td>
-             
-                <td><%=datos1.get(i).getNombre_campo() %></td>
-                <td><%=datos1.get(i).getNumero_campo() %></td>
-                <td><%=datos1.get(i).getDato() %></td>
-                <td><%=datos1.get(i).getDescripcion() %></td>
-                
-                <td>
-                
-                    <form  action="ControladorPlantillaCampo" method="POST"  >
-                        
-                              <input type="hidden"  name="id" id="id"  value="<%=datos1.get(i).getId() %>" >
-                              
-                                   
-                              <input  class="btn btn-success" type="submit"  name="accion" value="Editar" >
-                                <input  class="btn btn-danger" type="submit" name="accion"  value="Delete">
-                             
-                             
-                
-                    
-                    
-                </form>
-                
-                
-               
-                
-                </tr>           
-                
-        <%
-    }
-                    %>
-                    
-                    
-                    
-                </tbody>
-                
-            </table>
-            
-            
-        </div>        
-        
+              </div>
         
     </center>
        

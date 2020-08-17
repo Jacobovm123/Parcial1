@@ -238,7 +238,7 @@
                          <br>
                         <%
                             PersonaDAO dao222 = new PersonaDAO();
-                            List<Usuario>datos222=dao222.listar();
+                            List<Usuario>datos222=dao222.listarFiltroCatedratico();
                             for(int i=0; i<datos222.size(); i++){
                             out.print("<option value="+datos222.get(i).getId()+">"+
                             datos222.get(i).getNombre()

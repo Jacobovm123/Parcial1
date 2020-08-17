@@ -66,84 +66,16 @@
                     </ul>
                 </div>
           
-            <div class="btn-group">
-                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">ADMINISTRACION DE ACTIVIDADES   <span class="caret"></span></button>
+               <div class="btn-group">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">ADMINISTRACION DE ACTIVIDADES  <span class="caret"></span></button>
                     <ul class="dropdown-menu">
-                        <li><a href="GenerarActas.jsp"> ADMINISTRACION DE ACTIVIDADES  </a></li>
+                        <li><a href="GenerarActas.jsp"> GENERACION DE ACTAS  </a></li>
              
                         <li class="divider"></li>
               
                     </ul>
                 </div>
-                
-            <div>
-            <table  class="table table-striped" >
-                <thead>
-                    
-                    <tr>
-                  
-                        <th>ID</th>
-                   
-                         <th >NOMBRE</th>
-                          <th>APELLIDO</th>
-                           <th>PASS</th>
-                            <th>CORREO</th>
-                             <th>USUARIO</th>
-                              <th>CARGO</th>
-                        
-                        
-                    </tr>
-                </thead>   
-                <tbody>
-                       
-                    
-                    <%
-                    PersonaDAO dao = new PersonaDAO();
-                    
-                    List<Usuario>datos=dao.listarFiltroCatedratico();
-                    
-for (int i = 0; i < datos.size(); i++) {
-       
-        %>
-                
-        <tr>
-            
-                <td><%=datos.get(i).getId() %></td>
-                <td><%=datos.get(i).getNombre() %></td> 
-                <td><%=datos.get(i).getApellido() %></td>
-                <td><%=datos.get(i).getPass() %></td>
-                <td><%=datos.get(i).getCorreo() %></td>
-                <td><%=datos.get(i).getUsuario() %></td>
-                <td><%=datos.get(i).getCargo() %></td> 
-                <td>
-                
-                    <form  action="Controlador" method="POST"  >
-                              <input type="hidden"  name="id" id="id"  value="<%=datos.get(i).getId() %>" >
-                              <input  class="btn btn-success" type="submit"  name="accion" value="Editar" >
-                                <input  class="btn btn-danger" type="submit" name="accion"  value="Delete">
-                    
-                    
-                    
-                </form>
-                
-                
-                
-                
-                </tr>           
-                
-        <%
-    }
-                    %>
-                    
-                    
-                    
-                </tbody>
-                
-            </table>
-            
-            
-        </div>        
-        
+          
         
     </center>
         

@@ -75,73 +75,7 @@
                     </ul>
                 </div>
                 
-            <div>
-            <table  class="table table-striped" >
-                <thead>
-                    
-                    <tr>
-                  
-                        <th>ID</th>
-                   
-                         <th >NOMBRE</th>
-                          <th>APELLIDO</th>
-                           <th>PASS</th>
-                            <th>CORREO</th>
-                             <th>USUARIO</th>
-                              <th>CARGO</th>
-                        
-                        
-                    </tr>
-                </thead>   
-                <tbody>
-                       
-                    
-                    <%
-                    PersonaDAO dao = new PersonaDAO();
-                    
-                    List<Usuario>datos=dao.listarfiltro();
-                    
-for (int i = 0; i < datos.size(); i++) {
-       
-        %>
-                
-        <tr>
-            
-                <td><%=datos.get(i).getId() %></td>
-                <td><%=datos.get(i).getNombre() %></td> 
-                <td><%=datos.get(i).getApellido() %></td>
-                <td><%=datos.get(i).getPass() %></td>
-                <td><%=datos.get(i).getCorreo() %></td>
-                <td><%=datos.get(i).getUsuario() %></td>
-                <td><%=datos.get(i).getCargo() %></td> 
-                <td>
-                
-                    <form  action="Controlador" method="POST"  >
-                              <input type="hidden"  name="id" id="id"  value="<%=datos.get(i).getId() %>" >
-                             
-                             
-                    
-                    
-                    
-                </form>
-                
-                
-                
-                
-                </tr>           
-                
-        <%
-    }
-                    %>
-                    
-                    
-                    
-                </tbody>
-                
-            </table>
-            
-            
-        </div>        
+          
         
         
     </center>

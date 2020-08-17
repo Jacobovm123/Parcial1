@@ -126,7 +126,15 @@
       
       <!-- Button trigger modal -->
 
-
+   <div class="btn-group">
+                    <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">REGRESAR A MENU ESTUDIANTE <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                     
+                        <li><a href="FiltroEstudiante.jsp">REGRESAR A MENU ESTUDIANTE </a></li>
+                    
+                  
+                    </ul>
+                </div>
 <!-- Modal -->
 <div class="modal fade" id="pasos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
